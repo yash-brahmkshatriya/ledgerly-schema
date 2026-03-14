@@ -1,0 +1,76 @@
+components:
+  schemas:
+    User:
+      type: object
+      description: Represents a user in the system.
+      properties:
+        id:
+          type: string
+          description: The unique identifier for the user.
+        name:
+          type: string
+          description: The name of the user.
+        email:
+          type: string
+          description: The email address of the user.
+    Preference:
+      type: object
+      description: Represents user preferences.
+      properties:
+        currency:
+          type: string
+          description: The user's preferred currency.
+        interactedSplitPeople:
+          type: array
+          items:
+            type: string
+    StructuredExpense:
+      type: object
+      description: Represents a structured expense record.
+      properties:
+        expenseTimestamp:
+          type: string
+          format: date-time
+          description: The timestamp when the expense occurred.
+        title:
+          type: string
+          description: The title of the expense.
+        amount:
+          type: number
+          format: float
+          description: The total amount of the expense.
+        category:
+          type: string
+          description: The category of the expense.
+        tags:
+          type: array
+          items:
+            type: string
+          description: A list of tags associated with the expense.
+        description:
+          type: string
+          description: A detailed description of the expense.
+        split:
+          $ref: "#/components/schemas/Split"
+        paymentSource:
+          type: string
+          description: The source of payment for the expense (e.g., credit card, cash).
+        metadata:
+          type: object
+          description: Any additional metadata for the expense.
+          additionalProperties: true
+      required:
+        - expenseTimestamp
+        - title
+        - amount
+        - category
+        - tags
+        - description
+        - split
+
+    Split:
+      type: object
+      description: "Represents how the expense is split among participants. The keys are user identifiers and the values are the amounts owed."
+      additionalProperties:
+        type: number
+        format: float
