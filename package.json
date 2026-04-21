@@ -1,0 +1,8 @@
+{
+  "name": "@ledgerly/shared-schemas",
+  "version": "1.0.0",
+  "main": "openapi.yaml",
+  "files": [
+    "openapi.yaml"
+  ]
+}

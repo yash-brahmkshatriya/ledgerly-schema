@@ -1,0 +1,14 @@
+<groupId>com.ledgerly</groupId>
+<artifactId>shared-schemas</artifactId>
+<version>1.0.0</version>
+
+<build>
+    <resources>
+        <resource>
+            <directory>${project.basedir}</directory>
+            <includes>
+                <include>openapi.yaml</include>
+            </includes>
+        </resource>
+    </resources>
+</build>

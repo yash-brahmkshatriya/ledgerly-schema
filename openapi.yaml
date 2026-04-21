@@ -40,6 +40,9 @@ components:
         title:
           type: string
           description: The title of the expense.
+        currency:
+          type: string
+          description: The currency of the expense.
         amount:
           type: number
           format: float
@@ -64,6 +67,21 @@ components:
           type: object
           description: Any additional metadata for the expense.
           additionalProperties: true
+        status:
+          type: string
+          description: The status of the expense
+          enum:
+            - UNPROCESSED
+            - PROCESSED
+            - REVIEWED
+        trainingStatus:
+          type: string
+          description: Training status for the categorization
+          enum:
+            - PEDNING
+            - NOT_REQUIRED
+            - TRAINED
+
       required:
         - expenseTimestamp
         - title
