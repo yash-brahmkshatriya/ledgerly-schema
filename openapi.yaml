@@ -74,6 +74,7 @@ components:
             - UNPROCESSED
             - PROCESSED
             - REVIEWED
+            - SKIPPED
         trainingStatus:
           type: string
           description: Training status for the categorization
