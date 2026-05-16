@@ -79,7 +79,7 @@ components:
           type: string
           description: Training status for the categorization
           enum:
-            - PEDNING
+            - PENDING
             - NOT_REQUIRED
             - TRAINED
 
